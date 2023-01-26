@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="/Content/student?v=nN6JgXUMzG_GHqFr354im8UsenH1s27KQ-qt-8pGHEw1" rel="stylesheet"/>
+
+    
+    
+    
+    <style>
+        .drawer-controls {
+            padding-top: 10px;
+        }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ng-app="aiub">
+    <script src="/bundles/student?v=FFTh3lUCO3yjPABpkf-XYFypAiMK00UL3WWgb6G4Ydc1"></script>
+
+    
+    <div id="dvLoading">
+    </div>
+    <div id="backOpacity"></div>
+    <div class="container">
+        <br />
+        
+
+<div class="row" ng-app="aiub" ng-controller="NotificationController" ng-init="init('/')" ng-click="DocumentClick()">
+    <div class="hidden-lg hidden-md" style="padding: 15px;">
+    </div>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="topbar-container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-00000000-0000-0000-0000-000000000000">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a id="navigation-toggler" class="navbar-brand logo" href="/Student/Home/Index/5">
+                </a>
+
+            </div>
+            <ul class="nav navbar-nav hidden-md hidden-sm hidden-xs">
+                <li><a href="/Student/Course?q=iBpjLWVwA0VqUfd1zzMKvKuQZ4HHzfR0RBG0enAqZLY%3D"><i class="glyphicon glyphicon-list" aria-hidden="true"></i>&nbsp;Courses &amp; Results</a></li>
+                <li><a href="/Student/Registration?q=iBpjLWVwA0Vwz63h67B%2BnA%3D%3D"><i class="glyphicon glyphicon-flash" aria-hidden="true"></i>&nbsp;Registration</a></li>
+                <li><a href="/Student/GradeReport/ByCurriculum?q=mxPlMMGCoVQ%3D"><i class="glyphicon glyphicon-certificate" aria-hidden="true"></i>&nbsp;Grade Report</a></li>
+            </ul>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-00000000-0000-0000-0000-000000000000">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <div id="noti_Counter"></div> <!--SHOW NOTIFICATIONS COUNT.-->
+                        <!--A CIRCLE LIKE BUTTON TO DISPLAY NOTIFICATION DROPDOWN.-->
+                        <a href="#" id="noti_Button">
+                            <div ng-click="SeeNotifications()">&nbsp;&nbsp;<span class="fa fa-bell"></span><span class="hidden-lg hidden-md hidden-sm">&nbsp;Notifications</span></div>
+                        </a>
+
+                        
+                        <!--THE NOTIFICAIONS DROPDOWN BOX.-->
+                        <div id="notifications">
+                            <div style="width: 100%">
+                                <h3>
+                                    Notifications
+                                    <a href="#" class="pull-right" ng-click="DocumentClick()">Close</a>
+                                </h3>
+                            </div>
+                            <div class="col-md-12" style="height: 300px; overflow-y: scroll">
+                                <div ng-show="Notifications.length==0" class="row" style="margin: 5px; padding: 5px; background-color: lightblue; border-radius: 15px; color: #3b5998; text-align: center">
+                                    <b>Nothing to Show....</b>
+                                </div>
+                                <div ng-repeat="notification in Notifications">
+                                    <a href="#" ng-click="GoToUrl(notification)">
+                                        <div class="row" style="margin: 5px; padding: 5px; background-color: lightblue; border-radius: 15px; color: #3b5998;">
+                                            <div class="col-md-1 col-sm-12 col-xs-12 hidden-sm hidden-xs"><small>{{$index+1}}</small></div>
+                                            <div class="col-md-11 col-sm-12 col-xs-12"><small><b>{{notification.Message}}</b></small><br /><small>{{notification.Duration}}</small></div>
+                                            
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="seeAll"><a href="#" ng-click="GoToNotification1('/Student/Notification')">See All</a></div>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="fa fa-cog"></span><span class="hidden-lg hidden-md hidden-sm">&nbsp;Settings</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <div class="arrow top"></div>
+                            <li><a href="/Student/Credential/ChangePassword">Change Password</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/Login/Logout">
+                            <span class="fa fa-sign-out"></span><span class="hidden-lg hidden-md hidden-sm">Log Out</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <p class="navbar-text navbar-right" style="padding-right: 10px;">Welcome <a href="/Student/Home/Profile" class="navbar-link"><small>SADAT, ZUHAER AL</small></a></p>
+                    </li>
+                </ul>
+
+
+
+
+                
+
+
+
+
+
+
+
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+
+    </nav>
+
+</div>
+
+<style>
+    /* A CIRCLE LIKE BUTTON IN THE TOP MENU. */
+    #noti_Button {
+        margin: 0px 0px 0px -8px;
+    }
+
+    /* THE POPULAR RED NOTIFICATIONS COUNTER. */
+    #noti_Counter {
+        display: block;
+        position: absolute;
+        background: #E1141E;
+        color: #FFF;
+        font-size: 12px;
+        font-weight: normal;
+        padding: 1px 3px;
+        margin: -8px 0 0 25px;
+        border-radius: 2px;
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        z-index: 1;
+    }
+
+
+    /* THE NOTIFICAIONS WINDOW. THIS REMAINS HIDDEN WHEN THE PAGE LOADS. */
+    #notifications {
+        display: none;
+        width: 430px;
+        position: absolute;
+        top: 35px;
+        right: 0;
+        background: #FFF;
+        border: solid 1px rgba(100, 100, 100, .20);
+        -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .20);
+        z-index: 9000;
+    }
+
+
+
+    @media (max-width: 770px) {
+
+        #noti_Counter {
+            display: block;
+            position: absolute;
+            background: #E1141E;
+            color: #FFF;
+            font-size: 12px;
+            font-weight: normal;
+            padding: 1px 3px;
+            margin: -25px 0 0 25px;
+            border-radius: 2px;
+            -moz-border-radius: 2px;
+            -webkit-border-radius: 2px;
+            z-index: 1;
+        }
+
+        #notifications {
+            display: block;
+            width: 300px;
+            position: sticky;
+            top: 35px;
+            right: 10px;
+            background: #FFF;
+            border: solid 1px rgba(100, 100, 100, .20);
+            -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .20);
+            z-index: 9000;
+        }
+    }
+
+    /* AN ARROW LIKE STRUCTURE JUST OVER THE NOTIFICATIONS WINDOW */
+    /*#notifications:before {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            color: transparent;
+            border: 10px solid #CCC;
+            border-color: transparent transparent #FFF;
+            margin-top: -20px;
+            margin-left: 10px;
+        }*/
+
+    h3 {
+        display: block;
+        color: #333;
+        background: #FFF;
+        font-weight: bold;
+        font-size: 13px;
+        padding: 8px;
+        margin: 0;
+        border-bottom: solid 1px rgba(100, 100, 100, .30);
+    }
+
+    .seeAll {
+        background: #F6F7F8;
+        padding: 8px;
+        font-size: 12px;
+        font-weight: bold;
+        border-top: solid 1px rgba(100, 100, 100, .30);
+        text-align: center;
+    }
+
+        .seeAll a {
+            color: #3b5998;
+        }
+
+            .seeAll a:hover {
+                background: #F6F7F8;
+                color: #3b5998;
+                text-decoration: underline;
+            }
+</style>
+
+
+
+<script>
+    $(document).ready(function () {
+
+        $('#noti_Button').click(function () {
+            return false;
+        });
+
+        $('#notifications').click(function () {
+            return false;       // DO NOTHING WHEN CONTAINER IS CLICKED.
+        });
+    });
+</script>
+
+        <div class="portal-body">
+            
+
+<div id="drawerExample" class="drawer dw-xs-8 dw-sm-6 dw-md-4 fold hidden-lg hidden-md" aria-labelledby="drawerExample">
+    <div class="drawer-controls">
+        <a href="#drawerExample" data-toggle="drawer" aria-foldedopen="false" aria-controls="drawerExample" class="drawer-menu-link">
+            <i class="fa fa-2x fa-bars" aria-hidden="true"></i>
+        </a>
+    </div>
+
+    <div class="drawer-contents">
+        
+        <div class="drawer-body">
+
+
+<div class="panel-group" id="accordion0e5065b8-d413-4842-8610-43393bc4f61e" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading29d56705-a7b8-4d1c-9444-da46835ac792">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion0e5065b8-d413-4842-8610-43393bc4f61e" href="#collapse29d56705-a7b8-4d1c-9444-da46835ac792" aria-expanded="false" aria-controls="collapse29d56705-a7b8-4d1c-9444-da46835ac792" class="collapsed">
+                    <i class="fa fa-bar-chart-o"></i>&nbsp;Academics
+                    <i class="pull-right fa fa-caret-down"></i>
+                </a>
+            </h5>
+        </div>
+
+        <div id="collapse29d56705-a7b8-4d1c-9444-da46835ac792" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading29d56705-a7b8-4d1c-9444-da46835ac792" aria-expanded="false" style="height: 0px;">
+            <div>
+                <a href="/Student/Course?q=iBpjLWVwA0VqUfd1zzMKvKuQZ4HHzfR0RBG0enAqZLY%3D" class="list-group-item">
+                    <span class="glyphicon glyphicon-list"></span>&nbsp;Courses &amp; Results
+                </a>
+                <a href="/Student/Registration?q=iBpjLWVwA0Vwz63h67B%2BnA%3D%3D" class="list-group-item">
+                    <span class="glyphicon glyphicon-flash"></span>&nbsp;Registration
+                </a>
+                <a href="/Student/Adrop/DropApplication?q=mxPlMMGCoVQ%3D" class="list-group-item">
+                    <span class="glyphicon glyphicon-flash"></span>&nbsp;Drop Application
+                </a>
+                <a href="/Student/Section/Offered?q=mxPlMMGCoVQ%3D" class="list-group-item">
+                    <span class="glyphicon glyphicon-list-alt"></span>&nbsp;Offered Courses
+                </a>
+                <a href="/Student/Curriculum?q=mxPlMMGCoVQ%3D" class="list-group-item">
+                    <span class="glyphicon glyphicon-tasks"></span>&nbsp;My Curriculum
+                </a>
+                <a href="/Student/Accounts?q=6Pzj5wBh8sg%3D" class="list-group-item">
+                    <span class="glyphicon glyphicon-usd"></span>&nbsp;Financials
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingd9c5be44-c663-4764-953c-4fbf4c0a24a4">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordiond9c5be44-c663-4764-953c-4fbf4c0a24a4" href="#collapsed9c5be44-c663-4764-953c-4fbf4c0a24a4" aria-expanded="false" aria-controls="collapsed9c5be44-c663-4764-953c-4fbf4c0a24a4" class="collapsed">
+                    <i class="glyphicon glyphicon-certificate"></i>&nbsp;Grade Reports
+                    <i class="pull-right fa fa-caret-down"></i>
+                </a>
+            </h5>
+        </div>
+
+        <div id="collapsed9c5be44-c663-4764-953c-4fbf4c0a24a4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingd9c5be44-c663-4764-953c-4fbf4c0a24a4" aria-expanded="false" style="height: 0px;">
+            <div>
+                <a href="/Student/GradeReport/ByCurriculum?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-certificate"></span>&nbsp; By Curriculum</a>
+                <a href="/Student/GradeReport/BySemester?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-certificate"></span>&nbsp;By Semester</a>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingd46a63ca-d251-4c20-8894-46fd9aac444d">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion0e5065b8-d413-4842-8610-43393bc4f61e" href="#collapsed46a63ca-d251-4c20-8894-46fd9aac444d" aria-expanded="false" aria-controls="collapsed46a63ca-d251-4c20-8894-46fd9aac444d" class="collapsed">
+                    <i class="fa fa-edit"></i> Library
+                    <i class="pull-right fa fa-caret-down"></i>
+                </a>
+            </h5>
+        </div>
+
+        <div id="collapsed46a63ca-d251-4c20-8894-46fd9aac444d" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingd46a63ca-d251-4c20-8894-46fd9aac444d" aria-expanded="false">
+            <div>
+                <a href="/Student/Library/SearchBooks?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-search"></span>&nbsp;Search Book</a>
+                <a href="/Student/Library/CurrentBorrows?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-star"></span>&nbsp;Current Borrows</a>
+                <a href="/Student/Library/BorrowHistory?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-star-empty"></span>&nbsp;Borrow History</a>
+                <a href="/Student/Library/Financials?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-usd"></span>&nbsp;Financial</a>
+                
+                
+                
+                <a href="/Student/Library/UGC?q=6Pzj5wBh8sg%3D" class="list-group-item"><span class="glyphicon glyphicon-star"></span>&nbsp;UGC  Digital Library (UDL) E-Resources</a>
+                <a href="/Student/Library/SAGE?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-star"></span>&nbsp;SAGE</a>
+                <a href="/Student/Library/Electronicjournals?q=6Pzj5wBh8sg%3D" class="list-group-item"><span class="glyphicon glyphicon-star"></span>&nbsp;INASP (Electronic Journals)</a>
+                <a href="/Student/Library/Research4Life?q=6Pzj5wBh8sg%3D" class="list-group-item"><span class="glyphicon glyphicon-star"></span>&nbsp;Research4Life</a>
+                <a href="/Student/Library/BDLEX?q=6Pzj5wBh8sg%3D" class="list-group-item"><span class="glyphicon glyphicon-star"></span>&nbsp;Online Legal Research Database Bangladesh - BDLEX</a>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading56a23f8e-41a8-43a6-8529-d958521a2087">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion0e5065b8-d413-4842-8610-43393bc4f61e" href="#collapse56a23f8e-41a8-43a6-8529-d958521a2087" aria-expanded="false" aria-controls="collapse56a23f8e-41a8-43a6-8529-d958521a2087" class="collapsed">
+                    <i class="fa fa-picture-o"></i> Others
+                    <i class="pull-right fa fa-caret-down"></i>
+                </a>
+            </h4>
+        </div>
+
+        <div id="collapse56a23f8e-41a8-43a6-8529-d958521a2087" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading56a23f8e-41a8-43a6-8529-d958521a2087" aria-expanded="false">
+            <div>
+                <a href="/Student/Application?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-file"></span>&nbsp;Applications</a>
+                <a href="/Student/ParkingApplication" class="list-group-item"><span class="glyphicon glyphicon-file"></span>&nbsp;Parking Applications</a>
+                <a href="/Student/Home/OfficialForms?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-download"></span>&nbsp;Download Forms</a>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingf6a6e664-140f-4763-a428-981309a093c9">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion0e5065b8-d413-4842-8610-43393bc4f61e" href="#collapsef6a6e664-140f-4763-a428-981309a093c9" aria-expanded="false" aria-controls="collapsef6a6e664-140f-4763-a428-981309a093c9" class="collapsed">
+                    <i class="fa fa-table"></i> Messages
+                    <i class="pull-right fa fa-caret-down"></i>
+                </a>
+            </h5>
+        </div>
+
+        <div id="collapsef6a6e664-140f-4763-a428-981309a093c9" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingf6a6e664-140f-4763-a428-981309a093c9" aria-expanded="false" style="height: 0px;">
+            <div>
+                <a target="_blank" href="/Message/Email" class="list-group-item"><span class="glyphicon glyphicon-envelope"></span>&nbsp;Mail Box</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+        </div>
+        
+    </div>
+
+</div>
+<div class="row">
+
+    <div id="navigation-bar" class="col-md-3 hidden-xs hidden-sm">
+
+
+<div class="panel-group" id="accordionafacc46b-213a-4ff8-ace0-246a5cc7a952" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading7ec552fa-7f4b-4bd2-a5d3-dcf9aeb72d51">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordionafacc46b-213a-4ff8-ace0-246a5cc7a952" href="#collapse7ec552fa-7f4b-4bd2-a5d3-dcf9aeb72d51" aria-expanded="false" aria-controls="collapse7ec552fa-7f4b-4bd2-a5d3-dcf9aeb72d51" class="collapsed">
+                    <i class="fa fa-bar-chart-o"></i>&nbsp;Academics
+                    <i class="pull-right fa fa-caret-down"></i>
+                </a>
+            </h5>
+        </div>
+
+        <div id="collapse7ec552fa-7f4b-4bd2-a5d3-dcf9aeb72d51" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7ec552fa-7f4b-4bd2-a5d3-dcf9aeb72d51" aria-expanded="false" style="height: 0px;">
+            <div>
+                <a href="/Student/Course?q=iBpjLWVwA0VqUfd1zzMKvKuQZ4HHzfR0RBG0enAqZLY%3D" class="list-group-item">
+                    <span class="glyphicon glyphicon-list"></span>&nbsp;Courses &amp; Results
+                </a>
+                <a href="/Student/Registration?q=iBpjLWVwA0Vwz63h67B%2BnA%3D%3D" class="list-group-item">
+                    <span class="glyphicon glyphicon-flash"></span>&nbsp;Registration
+                </a>
+                <a href="/Student/Adrop/DropApplication?q=mxPlMMGCoVQ%3D" class="list-group-item">
+                    <span class="glyphicon glyphicon-flash"></span>&nbsp;Drop Application
+                </a>
+                <a href="/Student/Section/Offered?q=mxPlMMGCoVQ%3D" class="list-group-item">
+                    <span class="glyphicon glyphicon-list-alt"></span>&nbsp;Offered Courses
+                </a>
+                <a href="/Student/Curriculum?q=mxPlMMGCoVQ%3D" class="list-group-item">
+                    <span class="glyphicon glyphicon-tasks"></span>&nbsp;My Curriculum
+                </a>
+                <a href="/Student/Accounts?q=6Pzj5wBh8sg%3D" class="list-group-item">
+                    <span class="glyphicon glyphicon-usd"></span>&nbsp;Financials
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingf29f35bd-9156-41ee-a7bc-5362cf863739">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordionf29f35bd-9156-41ee-a7bc-5362cf863739" href="#collapsef29f35bd-9156-41ee-a7bc-5362cf863739" aria-expanded="false" aria-controls="collapsef29f35bd-9156-41ee-a7bc-5362cf863739" class="collapsed">
+                    <i class="glyphicon glyphicon-certificate"></i>&nbsp;Grade Reports
+                    <i class="pull-right fa fa-caret-down"></i>
+                </a>
+            </h5>
+        </div>
+
+        <div id="collapsef29f35bd-9156-41ee-a7bc-5362cf863739" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingf29f35bd-9156-41ee-a7bc-5362cf863739" aria-expanded="false" style="height: 0px;">
+            <div>
+                <a href="/Student/GradeReport/ByCurriculum?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-certificate"></span>&nbsp; By Curriculum</a>
+                <a href="/Student/GradeReport/BySemester?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-certificate"></span>&nbsp;By Semester</a>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading5a1becb0-a577-4936-8a9a-d7a4028b5ef3">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordionafacc46b-213a-4ff8-ace0-246a5cc7a952" href="#collapse5a1becb0-a577-4936-8a9a-d7a4028b5ef3" aria-expanded="false" aria-controls="collapse5a1becb0-a577-4936-8a9a-d7a4028b5ef3" class="collapsed">
+                    <i class="fa fa-edit"></i> Library
+                    <i class="pull-right fa fa-caret-down"></i>
+                </a>
+            </h5>
+        </div>
+
+        <div id="collapse5a1becb0-a577-4936-8a9a-d7a4028b5ef3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5a1becb0-a577-4936-8a9a-d7a4028b5ef3" aria-expanded="false">
+            <div>
+                <a href="/Student/Library/SearchBooks?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-search"></span>&nbsp;Search Book</a>
+                <a href="/Student/Library/CurrentBorrows?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-star"></span>&nbsp;Current Borrows</a>
+                <a href="/Student/Library/BorrowHistory?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-star-empty"></span>&nbsp;Borrow History</a>
+                <a href="/Student/Library/Financials?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-usd"></span>&nbsp;Financial</a>
+                
+                
+                
+                <a href="/Student/Library/UGC?q=6Pzj5wBh8sg%3D" class="list-group-item"><span class="glyphicon glyphicon-star"></span>&nbsp;UGC  Digital Library (UDL) E-Resources</a>
+                <a href="/Student/Library/SAGE?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-star"></span>&nbsp;SAGE</a>
+                <a href="/Student/Library/Electronicjournals?q=6Pzj5wBh8sg%3D" class="list-group-item"><span class="glyphicon glyphicon-star"></span>&nbsp;INASP (Electronic Journals)</a>
+                <a href="/Student/Library/Research4Life?q=6Pzj5wBh8sg%3D" class="list-group-item"><span class="glyphicon glyphicon-star"></span>&nbsp;Research4Life</a>
+                <a href="/Student/Library/BDLEX?q=6Pzj5wBh8sg%3D" class="list-group-item"><span class="glyphicon glyphicon-star"></span>&nbsp;Online Legal Research Database Bangladesh - BDLEX</a>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading8a23afcc-2a56-4862-b1a6-a3ce456fc4af">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordionafacc46b-213a-4ff8-ace0-246a5cc7a952" href="#collapse8a23afcc-2a56-4862-b1a6-a3ce456fc4af" aria-expanded="false" aria-controls="collapse8a23afcc-2a56-4862-b1a6-a3ce456fc4af" class="collapsed">
+                    <i class="fa fa-picture-o"></i> Others
+                    <i class="pull-right fa fa-caret-down"></i>
+                </a>
+            </h4>
+        </div>
+
+        <div id="collapse8a23afcc-2a56-4862-b1a6-a3ce456fc4af" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading8a23afcc-2a56-4862-b1a6-a3ce456fc4af" aria-expanded="false">
+            <div>
+                <a href="/Student/Application?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-file"></span>&nbsp;Applications</a>
+                <a href="/Student/ParkingApplication" class="list-group-item"><span class="glyphicon glyphicon-file"></span>&nbsp;Parking Applications</a>
+                <a href="/Student/Home/OfficialForms?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-download"></span>&nbsp;Download Forms</a>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading2e1e8bb5-c5aa-448a-920d-1f1e621c5d6c">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordionafacc46b-213a-4ff8-ace0-246a5cc7a952" href="#collapse2e1e8bb5-c5aa-448a-920d-1f1e621c5d6c" aria-expanded="false" aria-controls="collapse2e1e8bb5-c5aa-448a-920d-1f1e621c5d6c" class="collapsed">
+                    <i class="fa fa-table"></i> Messages
+                    <i class="pull-right fa fa-caret-down"></i>
+                </a>
+            </h5>
+        </div>
+
+        <div id="collapse2e1e8bb5-c5aa-448a-920d-1f1e621c5d6c" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2e1e8bb5-c5aa-448a-920d-1f1e621c5d6c" aria-expanded="false" style="height: 0px;">
+            <div>
+                <a target="_blank" href="/Message/Email" class="list-group-item"><span class="glyphicon glyphicon-envelope"></span>&nbsp;Mail Box</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    </div>
+    <div id="main-content" class="col-md-9 col-xs-12">
+        
+
+<div class="row">
+    <div class="col-sm-12 col-xs-12 col-md-12">
+
+
+                        
+            <div class="alert alert-success" style="padding: 5px">
+                <b>Please use this below information for log in to Microsoft Teams.</b>
+                <div class="row">
+                    <div class="col-md-6">
+                        <table class="table table-bordered" style="border-width: 5px">
+                            <tr>
+                                <td>
+                                    <b>User Name</b>
+                                </td>
+                                <td style="width: 5px">
+                                    <b>:</b>
+                                </td>
+                                <td>
+                                    <b>
+                                        22-49163-3@student.aiub.edu
+                                    </b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>Password</b>
+                                </td>
+                                <td>
+                                    <b>:</b>
+                                </td>
+                                <td>
+                                    <b>
+                                        Tuf11045
+                                    </b>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="thumbnail">
+                            <div class="caption">
+                                <b>How to log in to Microsoft Teams with one time password.</b>
+                            </div>
+                            <p><a href="/Content/OfficialForms/Student/MicrosoftTeams.pdf" class="btn btn-primary" role="button" target="_blank">Download</a> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div class="alert alert-warning" style="color: black">
+            <b>
+                Please provide your general information Correctly through
+
+                <a style="text-decoration: underline" href="/Student/Application/Host?q=DA378AHT2kccklCDtkunW1fEAYt8iUZ4">
+                    General Information Change Application
+                </a>
+                .
+            </b>
+        </div>
+
+
+                    <div class="panel panel-default">
+                <div class="panel-body">
+                    
+
+
+
+
+    <div class="text-center">
+            <a href="/Student/Registration/Start" class="btn btn-danger">Go to Registration</a>
+                                            <a href="/Student/StudentIdentity/LoadView?Length=7" class="btn btn-info">Submit Identity Information</a>
+                    <a href="/Student/Home/CovidVaccineInformation" class="btn btn-info">Covid-19 Vaccine Information</a>
+            </div>
+
+
+                </div>
+            </div>
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">Class Schedule</h5>
+            </div>
+            <div class="panel-body">
+                <style type="text/css">
+    .scheduleTable {
+    }
+
+        .scheduleTable .col-md-6 {
+            padding: 2px;
+            /*border-top: 1px solid #f5f1f1;*/
+            font-size: 12px;
+        }
+
+        .scheduleTable .row:first-child {
+            border-top: none;
+        }
+
+        .scheduleTable .row {
+            border-top: 1px solid #f5f1f1;
+        }
+</style>
+
+<div class="scheduleTable container-fluid">
+
+        <div class="row">
+            <div class="col-md-2 col-xs-12">
+<label for="Today">Today</label>            </div>
+            <div class="col-md-10 col-xs-12">
+                    <div class="col-md-6">No Class On This Day</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 col-xs-12">
+<label for="Tomorrow">Tomorrow</label>            </div>
+            <div class="col-md-10 col-xs-12">
+                    <div class="col-md-6">No Class On This Day</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 col-xs-12">
+<label for="">20-Jan-2023</label>            </div>
+            <div class="col-md-10 col-xs-12">
+                    <div class="col-md-6">No Class On This Day</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 col-xs-12">
+<label for="">21-Jan-2023</label>            </div>
+            <div class="col-md-10 col-xs-12">
+                    <div class="col-md-6">No Class On This Day</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 col-xs-12">
+<label for="">22-Jan-2023</label>            </div>
+            <div class="col-md-10 col-xs-12">
+                    <div class="col-md-6">No Class On This Day</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 col-xs-12">
+<label for="">23-Jan-2023</label>            </div>
+            <div class="col-md-10 col-xs-12">
+                    <div class="col-md-6">No Class On This Day</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 col-xs-12">
+<label for="">24-Jan-2023</label>            </div>
+            <div class="col-md-10 col-xs-12">
+                    <div class="col-md-6">No Class On This Day</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 col-xs-12">
+<label for="">25-Jan-2023</label>            </div>
+            <div class="col-md-10 col-xs-12">
+                    <div class="col-md-6">No Class On This Day</div>
+            </div>
+        </div>
+</div>
+
+            </div>
+        </div>
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-md-9 col-xs-12">
+                        <h5 class="panel-title">Registration</h5>
+                    </div>
+                    <div class="col-md-3 col-xs-12 btn-group btn-group-dropdown">
+                        <select class="btn btn-default form-control" id="SemesterDropDown" name="SemesterDropDown"><option selected="selected" value="/Student/Home/CourseList?q=iBpjLWVwA0VIY%2F8fTi0cBg%3D%3D">2022-2023, Fall</option>
+<option value="/Student/Home/CourseList?q=iBpjLWVwA0Ut9FNobfze7Q%3D%3D">2022-2023, Spring</option>
+</select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="divCourseList">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- Format Marks Modal -->
+<div id="modalBlockList" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <label>Student Block List</label>
+            </div>
+            <div class="modal-body">
+                    <p class="alert alert-danger">No Blocks To Show.</p>
+                
+                <table class="table table-bordered">
+                    <tr>
+                        <th>
+                            Ref.
+                        </th>
+                        <th>
+                            Message
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button class="btn  btn-info" data-dismiss="modal" aria-hidden="true">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </div>
+
+</div>
+
+        </div>
+        
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var popUp = 'False';
+            if (popUp === 'True') {
+                $('#modalBlockList').modal('show');
+            }
+
+            //window.parent.callErrorModal('Error', 'dsad');
+            $("#ProbationSemesterList option:last").attr("selected", "selected");
+            $('#divProbation').html('Loading...');
+            $('#divCourseList').html('Loading...');
+            $('#divCourseList').load($('#SemesterDropDown').val());
+            $('#divProbation').load($('#ProbationSemesterList').val());
+
+            $('#SemesterDropDown').change(function () {
+                $('#divCourseList').html('Loading...');
+                $('#divCourseList').load($('#SemesterDropDown').val());
+            });
+
+            $('#ProbationSemesterList').change(function () {
+                $('#divProbation').html('Loading...');
+                $('#divProbation').load($('#ProbationSemesterList').val());
+            });
+
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.table-details').footable({
+                "sorting": {
+                    "enabled": true
+                }
+            });
+
+            var lastScrollTop = 0;
+
+            $(window).scroll(function (event) {
+                var st = $(this).scrollTop();
+                if (st > lastScrollTop) {
+                    if (st > 15) {
+                        $(".drawer-menu-link>i").css({ opacity: .33 });
+                    }
+                } else {
+                    if (st < 15) {
+                        $(".drawer-menu-link>i").css({ opacity: 1 });
+                    }
+                }
+                lastScrollTop = st;
+                //console.log(st);
+            });
+
+
+
+        });
+    </script>
+
+    </div>
+</body>
+</html>

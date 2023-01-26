@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>SSF - Student Schedule Form</title>
+      <link href="cass.css" rel="stylesheet">
+   </head>
+   <body>
+      <div id="calendar1" style="width: 98%; margin-left: 1%;">
+         <div id="cal1" class="calendar ng-isolate-scope ng-pristine ng-valid fc fc-ltr fc-unthemed" ng-model="eventSource" calendar="myCalendar1" ui-calendar="uiConfig.calendar">
+            <div class="fc-view-container" style="">
+               <div class="fc-view fc-agendaWeek-view fc-agenda-view" style="">
+                  <table>
+                     <thead>
+                        <tr>
+                           <td class="fc-widget-header">
+                              <div class="fc-row fc-widget-header" style="border-right-width: 1px; margin-right: 13px;">
+                                 <table>
+                                    <thead>
+                                       <tr>
+                                          <th class="fc-axis fc-widget-header" style="width: 34px;"></th>
+                                          <th class="fc-day-header fc-widget-header fc-sun">Sun</th>
+                                          <th class="fc-day-header fc-widget-header fc-mon">Mon</th>
+                                          <th class="fc-day-header fc-widget-header fc-tue">Tue</th>
+                                          <th class="fc-day-header fc-widget-header fc-wed">Wed</th>
+                                          <th class="fc-day-header fc-widget-header fc-thu">Thu</th>
+                                          <th class="fc-day-header fc-widget-header fc-fri">Fri</th>
+                                          <th class="fc-day-header fc-widget-header fc-sat">Sat</th>
+                                       </tr>
+                                    </thead>
+                                 </table>
+                              </div>
+                           </td>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td class="fc-widget-content">
+                              <div class="fc-time-grid-container fc-scroller" style="height: 567px;">
+                                 <div class="fc-time-grid">
+                                    <div class="fc-bg">
+                                       <table>
+                                          <tbody>
+                                             <tr>
+                                                <td class="fc-axis fc-widget-content" style="width: 34px;"></td>
+                                                <td class="fc-day fc-widget-content fc-sun fc-past" data-date="2023-01-15"></td>
+                                                <td class="fc-day fc-widget-content fc-mon fc-past" data-date="2023-01-16"></td>
+                                                <td class="fc-day fc-widget-content fc-tue fc-past" data-date="2023-01-17"></td>
+                                                <td class="fc-day fc-widget-content fc-wed fc-past" data-date="2023-01-18"></td>
+                                                <td class="fc-day fc-widget-content fc-thu fc-past" data-date="2023-01-19"></td>
+                                                <td class="fc-day fc-widget-content fc-fri fc-today fc-state-highlight" data-date="2023-01-20"></td>
+                                                <td class="fc-day fc-widget-content fc-sat fc-future" data-date="2023-01-21"></td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                    </div>
+                                    <div class="fc-slats">
+                                       <table>
+                                          <tbody>
+                                             <tr>
+                                                <td class="fc-axis fc-time fc-widget-content" style="width: 34px;"><span>8am</span></td>
+                                                <td class="fc-widget-content"></td>
+                                             </tr>
+                                             <tr class="fc-minor">
+                                                <td class="fc-axis fc-time fc-widget-content" style="width: 34px;"></td>
+                                                <td class="fc-widget-content"></td>
+                                             </tr>
+                                             <tr>
+                                                <td class="fc-axis fc-time fc-widget-content" style="width: 34px;"><span>9am</span></td>
+                                                <td class="fc-widget-content"></td>
+                                             </tr>
+                                             <tr class="fc-minor">
+                                                <td class="fc-axis fc-time fc-widget-content" style="width: 34px;"></td>
+                                                <td class="fc-widget-content"></td>
+                                             </tr>
+                                             <tr>
+                                                <td class="fc-axis fc-time fc-widget-content" style="width: 34px;"><span>10am</span></td>
+                                                <td class="fc-widget-content"></td>
+                                             </tr>
+                                             <tr class="fc-minor">
+                                                <td class="fc-axis fc-time fc-widget-content" style="width: 34px;"></td>
+                                                <td class="fc-widget-content"></td>
+                                             </tr>
+                                             <tr>
+                                                <td class="fc-axis fc-time fc-widget-content" style="width: 34px;"><span>11am</span></td>
+                                                <td class="fc-widget-content"></td>
+                                             </tr>
+                                             <tr class="fc-minor">
+                                                <td class="fc-axis fc-time fc-widget-content" style="width: 34px;"></td>
+                                                <td class="fc-widget-content"></td>
+                                             </tr>
+                                             <tr>
+                                                <td class="fc-axis fc-time fc-widget-content" style="width: 34px;"><span>12pm</span></td>
+                                                <td class="fc-widget-content"></td>
+                                             </tr>
+                                             <tr class="fc-minor">
+                                                <td class="fc-axis fc-time fc-widget-content" style="width: 34px;"></td>
+                                                <td class="fc-widget-content"></td>
+                                             </tr>
+                                             <tr>
+                                                <td class="fc-axis fc-time fc-widget-content" style="width: 34px;"><span>1pm</span></td>
+                                                <td class="fc-widget-content"></td>
+                                             </tr>
+                                             <tr class="fc-minor">
+                                                <td class="fc-axis fc-time fc-widget-content" style="width: 34px;"></td>
+                                                <td class="fc-widget-content"></td>
+                                             </tr>
+                                             <tr>
+                                                <td class="fc-axis fc-time fc-widget-content" style="width: 34px;"><span>2pm</span></td>
+                                                <td class="fc-widget-content"></td>
+                                             </tr>
+                                             <tr class="fc-minor">
+                                                <td class="fc-axis fc-time fc-widget-content" style="width: 34px;"></td>
+                                                <td class="fc-widget-content"></td>
+                                             </tr>
+                                             <tr>
+                                                <td class="fc-axis fc-time fc-widget-content" style="width: 34px;"><span>3pm</span></td>
+                                                <td class="fc-widget-content"></td>
+                                             </tr>
+                                             <tr class="fc-minor">
+                                                <td class="fc-axis fc-time fc-widget-content" style="width: 34px;"></td>
+                                                <td class="fc-widget-content"></td>
+                                             </tr>
+                                             <tr>
+                                                <td class="fc-axis fc-time fc-widget-content" style="width: 34px;"><span>4pm</span></td>
+                                                <td class="fc-widget-content"></td>
+                                             </tr>
+                                             <tr class="fc-minor">
+                                                <td class="fc-axis fc-time fc-widget-content" style="width: 34px;"></td>
+                                                <td class="fc-widget-content"></td>
+                                             </tr>
+                                             <tr>
+                                                <td class="fc-axis fc-time fc-widget-content" style="width: 34px;"><span>5pm</span></td>
+                                                <td class="fc-widget-content"></td>
+                                             </tr>
+                                             <tr class="fc-minor">
+                                                <td class="fc-axis fc-time fc-widget-content" style="width: 34px;"></td>
+                                                <td class="fc-widget-content"></td>
+                                             </tr>
+                                             <tr>
+                                                <td class="fc-axis fc-time fc-widget-content" style="width: 34px;"><span>6pm</span></td>
+                                                <td class="fc-widget-content"></td>
+                                             </tr>
+                                             <tr class="fc-minor">
+                                                <td class="fc-axis fc-time fc-widget-content" style="width: 34px;"></td>
+                                                <td class="fc-widget-content"></td>
+                                             </tr>
+                                             <tr>
+                                                <td class="fc-axis fc-time fc-widget-content" style="width: 34px;"><span>7pm</span></td>
+                                                <td class="fc-widget-content"></td>
+                                             </tr>
+                                             <tr class="fc-minor">
+                                                <td class="fc-axis fc-time fc-widget-content" style="width: 34px;"></td>
+                                                <td class="fc-widget-content"></td>
+                                             </tr>
+                                             <tr>
+                                                <td class="fc-axis fc-time fc-widget-content" style="width: 34px;"><span>8pm</span></td>
+                                                <td class="fc-widget-content"></td>
+                                             </tr>
+                                             <tr class="fc-minor">
+                                                <td class="fc-axis fc-time fc-widget-content" style="width: 34px;"></td>
+                                                <td class="fc-widget-content"></td>
+                                             </tr>
+                                             <tr>
+                                                <td class="fc-axis fc-time fc-widget-content" style="width: 34px;"><span>9pm</span></td>
+                                                <td class="fc-widget-content"></td>
+                                             </tr>
+                                             <tr class="fc-minor">
+                                                <td class="fc-axis fc-time fc-widget-content" style="width: 34px;"></td>
+                                                <td class="fc-widget-content"></td>
+                                             </tr>
+                                             <tr>
+                                                <td class="fc-axis fc-time fc-widget-content" style="width: 34px;"><span>10pm</span></td>
+                                                <td class="fc-widget-content"></td>
+                                             </tr>
+                                             <tr class="fc-minor">
+                                                <td class="fc-axis fc-time fc-widget-content" style="width: 34px;"></td>
+                                                <td class="fc-widget-content"></td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                    </div>
+                                    <hr class="fc-widget-header" style="display: none;">
+                                    <div class="fc-content-skeleton">
+                                       <table>
+                                          <tbody>
+                                             <tr>
+                                                <td class="fc-axis" style="width: 34px;"></td>
+                                                <td>
+                                                   <div class="fc-event-container"><a class="fc-time-grid-event fc-event fc-start fc-end  ng-scope" style="inset: 54.09975px 0% -108.1995px; z-index: 1;">
+                                                         <div class="fc-content">
+                                                            <div class="fc-title"><span>9:15 - 10:30 <re.Match object; span=(45, 48), match='[C]'></span></div>
+                                                            <div class="fc-title"><span>Room: 6107(Theory)</span></div>
+                                                            <div class="fc-title">INTEGRAL CALCULUS & ORD. DIFF EQUATION [C](Theory)</div>
+                                                         </div>
+                                                         <div class="fc-bg"></div>
+                                                      </a><a class="fc-time-grid-event fc-event fc-start fc-end  ng-scope" style="inset: 216.399px 0% -288.53200000000004px; z-index: 1;">
+                                                         <div class="fc-content">
+                                                            <div class="fc-title"><span>1:0 - 2:40 <re.Match object; span=(36, 39), match='[H]'></span></div>
+                                                            <div class="fc-title"><span>Room: DS0703</span></div>
+                                                            <div class="fc-title">PRINCIPLES OF ECONOMICS [FST] [H](Theory)</div>
+                                                         </div>
+                                                         <div class="fc-bg"></div>
+                                                      </a><a class="fc-time-grid-event fc-event fc-start fc-end  ng-scope" style="inset: 0.0px 0% -54.09975px; z-index: 1;">
+                                                         <div class="fc-content">
+                                                            <div class="fc-title"><span>8:0 - 9:15 <re.Match object; span=(31, 34), match='[B]'></span></div>
+                                                            <div class="fc-title"><span>Room: 1110(Theory)</span></div>
+                                                            <div class="fc-title">BANGLADESH STUDIES [FST] [B](Theory)</div>
+                                                         </div>
+                                                         <div class="fc-bg"></div>
+                                                      </a><a class="fc-time-grid-event fc-event fc-start fc-end  ng-scope" style="inset: 108.1995px 0% -162.29925px; z-index: 1;">
+                                                         <div class="fc-content">
+                                                            <div class="fc-title"><span>10:30 - 11:45 <re.Match object; span=(16, 20), match='[BB]'></span></div>
+                                                            <div class="fc-title"><span>Room: 6205(Theory)</span></div>
+                                                            <div class="fc-title">PHYSICS 2 [BB](Theory)</div>
+                                                         </div>
+                                                         <div class="fc-bg"></div>
+                                                      </a></div></td><td><div class="fc-event-container"><a class="fc-time-grid-event fc-event fc-start fc-end  ng-scope" style="inset: 108.1995px 0% -162.29925px; z-index: 1;">
+                                                                 <div class="fc-content">
+                                                                    <div class="fc-title"><span>10:30 - 11:45 <re.Match object; span=(27, 30), match='[F]'></span></div>
+                                                                    <div class="fc-title"><span>Room: DN0610(Theory)</span></div>
+                                                                    <div class="fc-title">DISCRETE MATHEMATICS [F](Theory)</div>
+                                                                 </div>
+                                                                 <div class="fc-bg"></div>
+                                                              </a><a class="fc-time-grid-event fc-event fc-start fc-end  ng-scope" style="inset: 0.0px 0% -72.13300000000001px; z-index: 1;">
+                                                                 <div class="fc-content">
+                                                                    <div class="fc-title"><span>8:0 - 9:40 <re.Match object; span=(43, 46), match='[M]'></span></div>
+                                                                    <div class="fc-title"><span>Room: DN0510(Lab)</span></div>
+                                                                    <div class="fc-title">OBJECT ORIENTED PROGRAMMING 1 (JAVA) [M](Theory)</div>
+                                                                 </div>
+                                                                 <div class="fc-bg"></div>
+                                                              </a></div></td><td><div class="fc-event-container"><a class="fc-time-grid-event fc-event fc-start fc-end  ng-scope" style="inset: 54.09975px 0% -108.1995px; z-index: 1;">
+                                                                 <div class="fc-content">
+                                                                    <div class="fc-title"><span>9:15 - 10:30 <re.Match object; span=(45, 48), match='[C]'></span></div>
+                                                                    <div class="fc-title"><span>Room: 6107</span></div>
+                                                                    <div class="fc-title">INTEGRAL CALCULUS & ORD. DIFF EQUATION [C](Theory)</div>
+                                                                 </div>
+                                                                 <div class="fc-bg"></div>
+                                                              </a><a class="fc-time-grid-event fc-event fc-start fc-end  ng-scope" style="inset: 0.0px 0% -54.09975px; z-index: 1;">
+                                                                 <div class="fc-content">
+                                                                    <div class="fc-title"><span>8:0 - 9:15 <re.Match object; span=(31, 34), match='[B]'></span></div>
+                                                                    <div class="fc-title"><span>Room: 1110</span></div>
+                                                                    <div class="fc-title">BANGLADESH STUDIES [FST] [B](Theory)</div>
+                                                                 </div>
+                                                                 <div class="fc-bg"></div>
+                                                              </a><a class="fc-time-grid-event fc-event fc-start fc-end  ng-scope" style="inset: 108.1995px 0% -162.29925px; z-index: 1;">
+                                                                 <div class="fc-content">
+                                                                    <div class="fc-title"><span>10:30 - 11:45 <re.Match object; span=(16, 20), match='[BB]'></span></div>
+                                                                    <div class="fc-title"><span>Room: 6205</span></div>
+                                                                    <div class="fc-title">PHYSICS 2 [BB](Theory)</div>
+                                                                 </div>
+                                                                 <div class="fc-bg"></div>
+                                                              </a></div></td><td><div class="fc-event-container"><a class="fc-time-grid-event fc-event fc-start fc-end  ng-scope" style="inset: 108.1995px 0% -162.29925px; z-index: 1;">
+                                                                 <div class="fc-content">
+                                                                    <div class="fc-title"><span>10:30 - 11:45 <re.Match object; span=(27, 30), match='[F]'></span></div>
+                                                                    <div class="fc-title"><span>Room: DN0610</span></div>
+                                                                    <div class="fc-title">DISCRETE MATHEMATICS [F](Theory)</div>
+                                                                 </div>
+                                                                 <div class="fc-bg"></div>
+                                                              </a><a class="fc-time-grid-event fc-event fc-start fc-end  ng-scope" style="inset: 0.0px 0% -108.1995px; z-index: 1;">
+                                                                 <div class="fc-content">
+                                                                    <div class="fc-title"><span>8:0 - 10:30 <re.Match object; span=(43, 46), match='[M]'></span></div>
+                                                                    <div class="fc-title"><span>Room: DN0112</span></div>
+                                                                    <div class="fc-title">OBJECT ORIENTED PROGRAMMING 1 (JAVA) [M](Theory)</div>
+                                                                 </div>
+                                                                 <div class="fc-bg"></div>
+                                                              </a><a class="fc-time-grid-event fc-event fc-start fc-end  ng-scope" style="inset: 216.399px 0% -324.5985px; z-index: 1;">
+                                                                 <div class="fc-content">
+                                                                    <div class="fc-title"><span>1:0 - 3:30 <re.Match object; span=(20, 23), match='[I]'></span></div>
+                                                                    <div class="fc-title"><span>Room: 6105</span></div>
+                                                                    <div class="fc-title">PHYSICS 2 LAB [I](Lab)</div>
+                                                                 </div>
+                                                                 <div class="fc-bg"></div>
+                                                              </a></div>
+                                                </td>
+                                                <td>
+                                                   <div class="fc-event-container"></div>
+                                                </td>
+                                                <td>
+                                                   <div class="fc-event-container"></div>
+                                                </td>
+                                                <td>
+                                                   <div class="fc-event-container"></div>
+                                                </td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                    </div>
+                                 </div>
+                              </div>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+   </body>
+</html>

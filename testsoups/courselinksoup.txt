@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="/Content/student?v=nN6JgXUMzG_GHqFr354im8UsenH1s27KQ-qt-8pGHEw1" rel="stylesheet"/>
+
+    
+    
+    
+    <style>
+        .drawer-controls {
+            padding-top: 10px;
+        }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ng-app="aiub">
+    <script src="/bundles/student?v=FFTh3lUCO3yjPABpkf-XYFypAiMK00UL3WWgb6G4Ydc1"></script>
+
+    
+    <div id="dvLoading">
+    </div>
+    <div id="backOpacity"></div>
+    <div class="container">
+        <br />
+        
+
+<div class="row" ng-app="aiub" ng-controller="NotificationController" ng-init="init('/')" ng-click="DocumentClick()">
+    <div class="hidden-lg hidden-md" style="padding: 15px;">
+    </div>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="topbar-container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-00000000-0000-0000-0000-000000000000">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a id="navigation-toggler" class="navbar-brand logo" href="/Student">
+                </a>
+
+            </div>
+            <ul class="nav navbar-nav hidden-md hidden-sm hidden-xs">
+                <li><a href="/Student/Course?q=iBpjLWVwA0VqUfd1zzMKvKuQZ4HHzfR0RBG0enAqZLY%3D"><i class="glyphicon glyphicon-list" aria-hidden="true"></i>&nbsp;Courses &amp; Results</a></li>
+                <li><a href="/Student/Registration?q=iBpjLWVwA0Vwz63h67B%2BnA%3D%3D"><i class="glyphicon glyphicon-flash" aria-hidden="true"></i>&nbsp;Registration</a></li>
+                <li><a href="/Student/GradeReport/ByCurriculum?q=mxPlMMGCoVQ%3D"><i class="glyphicon glyphicon-certificate" aria-hidden="true"></i>&nbsp;Grade Report</a></li>
+            </ul>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-00000000-0000-0000-0000-000000000000">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <div id="noti_Counter"></div> <!--SHOW NOTIFICATIONS COUNT.-->
+                        <!--A CIRCLE LIKE BUTTON TO DISPLAY NOTIFICATION DROPDOWN.-->
+                        <a href="#" id="noti_Button">
+                            <div ng-click="SeeNotifications()">&nbsp;&nbsp;<span class="fa fa-bell"></span><span class="hidden-lg hidden-md hidden-sm">&nbsp;Notifications</span></div>
+                        </a>
+
+                        
+                        <!--THE NOTIFICAIONS DROPDOWN BOX.-->
+                        <div id="notifications">
+                            <div style="width: 100%">
+                                <h3>
+                                    Notifications
+                                    <a href="#" class="pull-right" ng-click="DocumentClick()">Close</a>
+                                </h3>
+                            </div>
+                            <div class="col-md-12" style="height: 300px; overflow-y: scroll">
+                                <div ng-show="Notifications.length==0" class="row" style="margin: 5px; padding: 5px; background-color: lightblue; border-radius: 15px; color: #3b5998; text-align: center">
+                                    <b>Nothing to Show....</b>
+                                </div>
+                                <div ng-repeat="notification in Notifications">
+                                    <a href="#" ng-click="GoToUrl(notification)">
+                                        <div class="row" style="margin: 5px; padding: 5px; background-color: lightblue; border-radius: 15px; color: #3b5998;">
+                                            <div class="col-md-1 col-sm-12 col-xs-12 hidden-sm hidden-xs"><small>{{$index+1}}</small></div>
+                                            <div class="col-md-11 col-sm-12 col-xs-12"><small><b>{{notification.Message}}</b></small><br /><small>{{notification.Duration}}</small></div>
+                                            
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="seeAll"><a href="#" ng-click="GoToNotification1('/Student/Notification')">See All</a></div>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="fa fa-cog"></span><span class="hidden-lg hidden-md hidden-sm">&nbsp;Settings</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <div class="arrow top"></div>
+                            <li><a href="/Student/Credential/ChangePassword">Change Password</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/Login/Logout">
+                            <span class="fa fa-sign-out"></span><span class="hidden-lg hidden-md hidden-sm">Log Out</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <p class="navbar-text navbar-right" style="padding-right: 10px;">Welcome <a href="/Student/Home/Profile" class="navbar-link"><small>SADAT, ZUHAER AL</small></a></p>
+                    </li>
+                </ul>
+
+
+
+
+                
+
+
+
+
+
+
+
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+
+    </nav>
+
+</div>
+
+<style>
+    /* A CIRCLE LIKE BUTTON IN THE TOP MENU. */
+    #noti_Button {
+        margin: 0px 0px 0px -8px;
+    }
+
+    /* THE POPULAR RED NOTIFICATIONS COUNTER. */
+    #noti_Counter {
+        display: block;
+        position: absolute;
+        background: #E1141E;
+        color: #FFF;
+        font-size: 12px;
+        font-weight: normal;
+        padding: 1px 3px;
+        margin: -8px 0 0 25px;
+        border-radius: 2px;
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        z-index: 1;
+    }
+
+
+    /* THE NOTIFICAIONS WINDOW. THIS REMAINS HIDDEN WHEN THE PAGE LOADS. */
+    #notifications {
+        display: none;
+        width: 430px;
+        position: absolute;
+        top: 35px;
+        right: 0;
+        background: #FFF;
+        border: solid 1px rgba(100, 100, 100, .20);
+        -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .20);
+        z-index: 9000;
+    }
+
+
+
+    @media (max-width: 770px) {
+
+        #noti_Counter {
+            display: block;
+            position: absolute;
+            background: #E1141E;
+            color: #FFF;
+            font-size: 12px;
+            font-weight: normal;
+            padding: 1px 3px;
+            margin: -25px 0 0 25px;
+            border-radius: 2px;
+            -moz-border-radius: 2px;
+            -webkit-border-radius: 2px;
+            z-index: 1;
+        }
+
+        #notifications {
+            display: block;
+            width: 300px;
+            position: sticky;
+            top: 35px;
+            right: 10px;
+            background: #FFF;
+            border: solid 1px rgba(100, 100, 100, .20);
+            -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .20);
+            z-index: 9000;
+        }
+    }
+
+    /* AN ARROW LIKE STRUCTURE JUST OVER THE NOTIFICATIONS WINDOW */
+    /*#notifications:before {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            color: transparent;
+            border: 10px solid #CCC;
+            border-color: transparent transparent #FFF;
+            margin-top: -20px;
+            margin-left: 10px;
+        }*/
+
+    h3 {
+        display: block;
+        color: #333;
+        background: #FFF;
+        font-weight: bold;
+        font-size: 13px;
+        padding: 8px;
+        margin: 0;
+        border-bottom: solid 1px rgba(100, 100, 100, .30);
+    }
+
+    .seeAll {
+        background: #F6F7F8;
+        padding: 8px;
+        font-size: 12px;
+        font-weight: bold;
+        border-top: solid 1px rgba(100, 100, 100, .30);
+        text-align: center;
+    }
+
+        .seeAll a {
+            color: #3b5998;
+        }
+
+            .seeAll a:hover {
+                background: #F6F7F8;
+                color: #3b5998;
+                text-decoration: underline;
+            }
+</style>
+
+
+
+<script>
+    $(document).ready(function () {
+
+        $('#noti_Button').click(function () {
+            return false;
+        });
+
+        $('#notifications').click(function () {
+            return false;       // DO NOTHING WHEN CONTAINER IS CLICKED.
+        });
+    });
+</script>
+
+        <div class="portal-body">
+            
+
+<div id="drawerExample" class="drawer dw-xs-8 dw-sm-6 dw-md-4 fold hidden-lg hidden-md" aria-labelledby="drawerExample">
+    <div class="drawer-controls">
+        <a href="#drawerExample" data-toggle="drawer" aria-foldedopen="false" aria-controls="drawerExample" class="drawer-menu-link">
+            <i class="fa fa-2x fa-bars" aria-hidden="true"></i>
+        </a>
+    </div>
+
+    <div class="drawer-contents">
+        
+        <div class="drawer-body">
+
+
+<div class="panel-group" id="accordion588ff416-4e50-442f-b520-69f7e8b1459f" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingb297c23b-3a71-4a39-ae1c-e214ff8b000a">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion588ff416-4e50-442f-b520-69f7e8b1459f" href="#collapseb297c23b-3a71-4a39-ae1c-e214ff8b000a" aria-expanded="false" aria-controls="collapseb297c23b-3a71-4a39-ae1c-e214ff8b000a" class="collapsed">
+                    <i class="fa fa-bar-chart-o"></i>&nbsp;Academics
+                    <i class="pull-right fa fa-caret-down"></i>
+                </a>
+            </h5>
+        </div>
+
+        <div id="collapseb297c23b-3a71-4a39-ae1c-e214ff8b000a" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingb297c23b-3a71-4a39-ae1c-e214ff8b000a" aria-expanded="false" style="height: 0px;">
+            <div>
+                <a href="/Student/Course?q=iBpjLWVwA0VqUfd1zzMKvKuQZ4HHzfR0RBG0enAqZLY%3D" class="list-group-item">
+                    <span class="glyphicon glyphicon-list"></span>&nbsp;Courses &amp; Results
+                </a>
+                <a href="/Student/Registration?q=iBpjLWVwA0Vwz63h67B%2BnA%3D%3D" class="list-group-item">
+                    <span class="glyphicon glyphicon-flash"></span>&nbsp;Registration
+                </a>
+                <a href="/Student/Adrop/DropApplication?q=mxPlMMGCoVQ%3D" class="list-group-item">
+                    <span class="glyphicon glyphicon-flash"></span>&nbsp;Drop Application
+                </a>
+                <a href="/Student/Section/Offered?q=mxPlMMGCoVQ%3D" class="list-group-item">
+                    <span class="glyphicon glyphicon-list-alt"></span>&nbsp;Offered Courses
+                </a>
+                <a href="/Student/Curriculum?q=mxPlMMGCoVQ%3D" class="list-group-item">
+                    <span class="glyphicon glyphicon-tasks"></span>&nbsp;My Curriculum
+                </a>
+                <a href="/Student/Accounts?q=6Pzj5wBh8sg%3D" class="list-group-item">
+                    <span class="glyphicon glyphicon-usd"></span>&nbsp;Financials
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading9e59243d-1357-495b-b84a-c178e66c34f5">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion9e59243d-1357-495b-b84a-c178e66c34f5" href="#collapse9e59243d-1357-495b-b84a-c178e66c34f5" aria-expanded="false" aria-controls="collapse9e59243d-1357-495b-b84a-c178e66c34f5" class="collapsed">
+                    <i class="glyphicon glyphicon-certificate"></i>&nbsp;Grade Reports
+                    <i class="pull-right fa fa-caret-down"></i>
+                </a>
+            </h5>
+        </div>
+
+        <div id="collapse9e59243d-1357-495b-b84a-c178e66c34f5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading9e59243d-1357-495b-b84a-c178e66c34f5" aria-expanded="false" style="height: 0px;">
+            <div>
+                <a href="/Student/GradeReport/ByCurriculum?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-certificate"></span>&nbsp; By Curriculum</a>
+                <a href="/Student/GradeReport/BySemester?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-certificate"></span>&nbsp;By Semester</a>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading353cc7ec-2741-4f9a-9fdb-69b9a20816a7">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion588ff416-4e50-442f-b520-69f7e8b1459f" href="#collapse353cc7ec-2741-4f9a-9fdb-69b9a20816a7" aria-expanded="false" aria-controls="collapse353cc7ec-2741-4f9a-9fdb-69b9a20816a7" class="collapsed">
+                    <i class="fa fa-edit"></i> Library
+                    <i class="pull-right fa fa-caret-down"></i>
+                </a>
+            </h5>
+        </div>
+
+        <div id="collapse353cc7ec-2741-4f9a-9fdb-69b9a20816a7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading353cc7ec-2741-4f9a-9fdb-69b9a20816a7" aria-expanded="false">
+            <div>
+                <a href="/Student/Library/SearchBooks?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-search"></span>&nbsp;Search Book</a>
+                <a href="/Student/Library/CurrentBorrows?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-star"></span>&nbsp;Current Borrows</a>
+                <a href="/Student/Library/BorrowHistory?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-star-empty"></span>&nbsp;Borrow History</a>
+                <a href="/Student/Library/Financials?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-usd"></span>&nbsp;Financial</a>
+                
+                
+                
+                <a href="/Student/Library/UGC?q=6Pzj5wBh8sg%3D" class="list-group-item"><span class="glyphicon glyphicon-star"></span>&nbsp;UGC  Digital Library (UDL) E-Resources</a>
+                <a href="/Student/Library/SAGE?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-star"></span>&nbsp;SAGE</a>
+                <a href="/Student/Library/Electronicjournals?q=6Pzj5wBh8sg%3D" class="list-group-item"><span class="glyphicon glyphicon-star"></span>&nbsp;INASP (Electronic Journals)</a>
+                <a href="/Student/Library/Research4Life?q=6Pzj5wBh8sg%3D" class="list-group-item"><span class="glyphicon glyphicon-star"></span>&nbsp;Research4Life</a>
+                <a href="/Student/Library/BDLEX?q=6Pzj5wBh8sg%3D" class="list-group-item"><span class="glyphicon glyphicon-star"></span>&nbsp;Online Legal Research Database Bangladesh - BDLEX</a>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading91a4afb4-2a84-4c88-b2db-bc03d45f288e">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion588ff416-4e50-442f-b520-69f7e8b1459f" href="#collapse91a4afb4-2a84-4c88-b2db-bc03d45f288e" aria-expanded="false" aria-controls="collapse91a4afb4-2a84-4c88-b2db-bc03d45f288e" class="collapsed">
+                    <i class="fa fa-picture-o"></i> Others
+                    <i class="pull-right fa fa-caret-down"></i>
+                </a>
+            </h4>
+        </div>
+
+        <div id="collapse91a4afb4-2a84-4c88-b2db-bc03d45f288e" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading91a4afb4-2a84-4c88-b2db-bc03d45f288e" aria-expanded="false">
+            <div>
+                <a href="/Student/Application?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-file"></span>&nbsp;Applications</a>
+                <a href="/Student/ParkingApplication" class="list-group-item"><span class="glyphicon glyphicon-file"></span>&nbsp;Parking Applications</a>
+                <a href="/Student/Home/OfficialForms?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-download"></span>&nbsp;Download Forms</a>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingbcb8c3f2-10f2-4961-9647-a21b579a6841">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion588ff416-4e50-442f-b520-69f7e8b1459f" href="#collapsebcb8c3f2-10f2-4961-9647-a21b579a6841" aria-expanded="false" aria-controls="collapsebcb8c3f2-10f2-4961-9647-a21b579a6841" class="collapsed">
+                    <i class="fa fa-table"></i> Messages
+                    <i class="pull-right fa fa-caret-down"></i>
+                </a>
+            </h5>
+        </div>
+
+        <div id="collapsebcb8c3f2-10f2-4961-9647-a21b579a6841" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingbcb8c3f2-10f2-4961-9647-a21b579a6841" aria-expanded="false" style="height: 0px;">
+            <div>
+                <a target="_blank" href="/Message/Email" class="list-group-item"><span class="glyphicon glyphicon-envelope"></span>&nbsp;Mail Box</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+        </div>
+        
+    </div>
+
+</div>
+<div class="row">
+
+    <div id="navigation-bar" class="col-md-3 hidden-xs hidden-sm">
+
+
+<div class="panel-group" id="accordion6fcb1369-c929-4c63-a615-dc2a7844189e" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading46773a81-4459-46ec-8966-5259b613550c">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion6fcb1369-c929-4c63-a615-dc2a7844189e" href="#collapse46773a81-4459-46ec-8966-5259b613550c" aria-expanded="false" aria-controls="collapse46773a81-4459-46ec-8966-5259b613550c" class="collapsed">
+                    <i class="fa fa-bar-chart-o"></i>&nbsp;Academics
+                    <i class="pull-right fa fa-caret-down"></i>
+                </a>
+            </h5>
+        </div>
+
+        <div id="collapse46773a81-4459-46ec-8966-5259b613550c" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading46773a81-4459-46ec-8966-5259b613550c" aria-expanded="false" style="height: 0px;">
+            <div>
+                <a href="/Student/Course?q=iBpjLWVwA0VqUfd1zzMKvKuQZ4HHzfR0RBG0enAqZLY%3D" class="list-group-item">
+                    <span class="glyphicon glyphicon-list"></span>&nbsp;Courses &amp; Results
+                </a>
+                <a href="/Student/Registration?q=iBpjLWVwA0Vwz63h67B%2BnA%3D%3D" class="list-group-item">
+                    <span class="glyphicon glyphicon-flash"></span>&nbsp;Registration
+                </a>
+                <a href="/Student/Adrop/DropApplication?q=mxPlMMGCoVQ%3D" class="list-group-item">
+                    <span class="glyphicon glyphicon-flash"></span>&nbsp;Drop Application
+                </a>
+                <a href="/Student/Section/Offered?q=mxPlMMGCoVQ%3D" class="list-group-item">
+                    <span class="glyphicon glyphicon-list-alt"></span>&nbsp;Offered Courses
+                </a>
+                <a href="/Student/Curriculum?q=mxPlMMGCoVQ%3D" class="list-group-item">
+                    <span class="glyphicon glyphicon-tasks"></span>&nbsp;My Curriculum
+                </a>
+                <a href="/Student/Accounts?q=6Pzj5wBh8sg%3D" class="list-group-item">
+                    <span class="glyphicon glyphicon-usd"></span>&nbsp;Financials
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading9b8464f4-3fa8-4be4-bd52-9eb9e36595f1">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion9b8464f4-3fa8-4be4-bd52-9eb9e36595f1" href="#collapse9b8464f4-3fa8-4be4-bd52-9eb9e36595f1" aria-expanded="false" aria-controls="collapse9b8464f4-3fa8-4be4-bd52-9eb9e36595f1" class="collapsed">
+                    <i class="glyphicon glyphicon-certificate"></i>&nbsp;Grade Reports
+                    <i class="pull-right fa fa-caret-down"></i>
+                </a>
+            </h5>
+        </div>
+
+        <div id="collapse9b8464f4-3fa8-4be4-bd52-9eb9e36595f1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading9b8464f4-3fa8-4be4-bd52-9eb9e36595f1" aria-expanded="false" style="height: 0px;">
+            <div>
+                <a href="/Student/GradeReport/ByCurriculum?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-certificate"></span>&nbsp; By Curriculum</a>
+                <a href="/Student/GradeReport/BySemester?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-certificate"></span>&nbsp;By Semester</a>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading930f5cbf-32d3-4931-9d19-42735f7cf7db">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion6fcb1369-c929-4c63-a615-dc2a7844189e" href="#collapse930f5cbf-32d3-4931-9d19-42735f7cf7db" aria-expanded="false" aria-controls="collapse930f5cbf-32d3-4931-9d19-42735f7cf7db" class="collapsed">
+                    <i class="fa fa-edit"></i> Library
+                    <i class="pull-right fa fa-caret-down"></i>
+                </a>
+            </h5>
+        </div>
+
+        <div id="collapse930f5cbf-32d3-4931-9d19-42735f7cf7db" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading930f5cbf-32d3-4931-9d19-42735f7cf7db" aria-expanded="false">
+            <div>
+                <a href="/Student/Library/SearchBooks?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-search"></span>&nbsp;Search Book</a>
+                <a href="/Student/Library/CurrentBorrows?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-star"></span>&nbsp;Current Borrows</a>
+                <a href="/Student/Library/BorrowHistory?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-star-empty"></span>&nbsp;Borrow History</a>
+                <a href="/Student/Library/Financials?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-usd"></span>&nbsp;Financial</a>
+                
+                
+                
+                <a href="/Student/Library/UGC?q=6Pzj5wBh8sg%3D" class="list-group-item"><span class="glyphicon glyphicon-star"></span>&nbsp;UGC  Digital Library (UDL) E-Resources</a>
+                <a href="/Student/Library/SAGE?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-star"></span>&nbsp;SAGE</a>
+                <a href="/Student/Library/Electronicjournals?q=6Pzj5wBh8sg%3D" class="list-group-item"><span class="glyphicon glyphicon-star"></span>&nbsp;INASP (Electronic Journals)</a>
+                <a href="/Student/Library/Research4Life?q=6Pzj5wBh8sg%3D" class="list-group-item"><span class="glyphicon glyphicon-star"></span>&nbsp;Research4Life</a>
+                <a href="/Student/Library/BDLEX?q=6Pzj5wBh8sg%3D" class="list-group-item"><span class="glyphicon glyphicon-star"></span>&nbsp;Online Legal Research Database Bangladesh - BDLEX</a>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading84b8c1d5-c359-40ae-aa3d-1c954ddff348">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion6fcb1369-c929-4c63-a615-dc2a7844189e" href="#collapse84b8c1d5-c359-40ae-aa3d-1c954ddff348" aria-expanded="false" aria-controls="collapse84b8c1d5-c359-40ae-aa3d-1c954ddff348" class="collapsed">
+                    <i class="fa fa-picture-o"></i> Others
+                    <i class="pull-right fa fa-caret-down"></i>
+                </a>
+            </h4>
+        </div>
+
+        <div id="collapse84b8c1d5-c359-40ae-aa3d-1c954ddff348" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading84b8c1d5-c359-40ae-aa3d-1c954ddff348" aria-expanded="false">
+            <div>
+                <a href="/Student/Application?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-file"></span>&nbsp;Applications</a>
+                <a href="/Student/ParkingApplication" class="list-group-item"><span class="glyphicon glyphicon-file"></span>&nbsp;Parking Applications</a>
+                <a href="/Student/Home/OfficialForms?q=mxPlMMGCoVQ%3D" class="list-group-item"><span class="glyphicon glyphicon-download"></span>&nbsp;Download Forms</a>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading1e48771a-7da6-4b0c-ba39-040571e52f44">
+            <h5 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion6fcb1369-c929-4c63-a615-dc2a7844189e" href="#collapse1e48771a-7da6-4b0c-ba39-040571e52f44" aria-expanded="false" aria-controls="collapse1e48771a-7da6-4b0c-ba39-040571e52f44" class="collapsed">
+                    <i class="fa fa-table"></i> Messages
+                    <i class="pull-right fa fa-caret-down"></i>
+                </a>
+            </h5>
+        </div>
+
+        <div id="collapse1e48771a-7da6-4b0c-ba39-040571e52f44" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1e48771a-7da6-4b0c-ba39-040571e52f44" aria-expanded="false" style="height: 0px;">
+            <div>
+                <a target="_blank" href="/Message/Email" class="list-group-item"><span class="glyphicon glyphicon-envelope"></span>&nbsp;Mail Box</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    </div>
+    <div id="main-content" class="col-md-9 col-xs-12">
+        
+<style>
+    .container-fluid .row .col-md-2 label {
+        padding-bottom: 3px;padding-top: 3px;
+    }
+</style>
+<div class="margin5">
+    
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-md-9 col-xs-12">
+                    <h5 class="panel-title">Registration</h5>
+                </div>
+                <div class="col-md-3 col-xs-12 btn-group btn-group-dropdown">
+                    <select class="btn btn-default form-control" id="SemesterDropDown" name="SemesterDropDown"><option value="/Student/Registration?q=iBpjLWVwA0VIY%2F8fTi0cBg%3D%3D">2022-2023, Fall</option>
+<option selected="selected" value="/Student/Registration?q=iBpjLWVwA0Ut9FNobfze7Q%3D%3D">2022-2023, Spring</option>
+</select>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td>
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-md-3 col-sm-4 col-xs-6">
+                                            <label>Lecture: </label>
+                                            <label class="">18.0</label>
+                                        </div>
+                                        <div class="col-md-3 col-sm-4 col-xs-6">
+                                            <label>Science: </label>
+                                            <label class="">1 </label>
+                                        </div>
+                                        <div class="col-md-3 col-sm-4 col-xs-6">
+                                            <label>Computer: </label>
+                                            <label class="">1</label>
+                                        </div>
+                                        <div class="col-md-3 col-sm-4 col-xs-6">
+                                            <label>Language: </label>
+                                            <label class="">0</label>
+                                        </div>
+                                        <div class="col-md-3 col-sm-4 col-xs-6">
+                                            <label>Studio: </label>
+                                            <label class="">0</label>
+                                        </div>
+                                        <div class="col-md-3 col-sm-4 col-xs-6">
+
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                                </td>
+                            <td>
+                                <a href="/Student/Registration/Print?q=iBpjLWVwA0VxzIWdDto6igdfbmttWldZtbWV5h9oUzuKulbe5G%2BDI%2FzloBuxf8OffJuq4jS%2F8Q2%2FcVVmgNPTPAlgVqZN1NBPxBzpYkbP6OUxihJWpKI86Q%3D%3D" onclick="return checkValidity(772,'2022-2023, Spring',772);" class="btn btn-xs btn-danger pull-right">Print</a>
+                                
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <table class="table  table-details">
+                                <thead>
+                                    <tr>
+                                        <th data-type="html">Registered</th>
+                                        <th data-breakpoints="xs sm">Lec-Com-Sci-Lan-Stu</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>
+                                                <a href="/Student/Section?q=COLA13YrU3aee6k8DEKL6A%3D%3D">01479-DISCRETE MATHEMATICS [F]</a>
+                                                
+
+                                                    <div>
+                                                        <span>(Theory) Time: Mon 10:30 - Mon 11:45 Room: 1110</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>(Theory) Time: Wed 10:30 - Wed 11:45 Room: 1110</span>
+                                                    </div>
+                                                                                            </td>
+                                            <td>3 - 0 - 0 - 0 - 0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="/Student/Section?q=T2HiSnldVvCGIscbIG8PvQ%3D%3D">01539-OBJECT ORIENTED PROGRAMMING 1 (JAVA) [M]</a>
+                                                
+
+                                                    <div>
+                                                        <span>(Theory) Time: Mon 8:0 - Mon 9:40 Room: DN0510</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>(Lab) Time: Wed 8:0 - Wed 10:30 Room: DN0112</span>
+                                                    </div>
+                                                                                            </td>
+                                            <td>3 - 1 - 0 - 0 - 0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="/Student/Section?q=wzjcECyPuIqnQNSlpmsImg%3D%3D">01747-INTEGRAL CALCULUS &amp; ORD. DIFF EQUATION [C]</a>
+                                                
+
+                                                    <div>
+                                                        <span>(Theory) Time: Sun 9:15 - Sun 10:30 Room: 6107</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>(Theory) Time: Tue 9:15 - Tue 10:30 Room: 6107</span>
+                                                    </div>
+                                                                                            </td>
+                                            <td>3 - 0 - 0 - 0 - 0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="/Student/Section?q=Whg9YnSgW0Wwz12gtNvMqg%3D%3D">01712-PHYSICS 2 LAB [I]</a>
+                                                
+
+                                                    <div>
+                                                        <span>(Lab) Time: Wed 1:0 PM - Wed 3:30 PM Room: 6105</span>
+                                                    </div>
+                                                                                            </td>
+                                            <td>1 - 0 - 1 - 0 - 0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="/Student/Section?q=b4of%2FPKKlEZDDQcE503hGQ%3D%3D">00373-PRINCIPLES OF ECONOMICS [FST] [H]</a>
+                                                
+
+                                                    <div>
+                                                        <span>(Theory) Time: Sun 1:0 PM - Sun 2:40 PM Room: DS0703</span>
+                                                    </div>
+                                                                                            </td>
+                                            <td>2 - 0 - 0 - 0 - 0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="/Student/Section?q=8FPBx%2FKEtf4Z5HZptP30Yw%3D%3D">00342-BANGLADESH STUDIES [FST] [B]</a>
+                                                
+
+                                                    <div>
+                                                        <span>(Theory) Time: Sun 8:0 - Sun 9:15 Room: 1110</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>(Theory) Time: Tue 8:0 - Tue 9:15 Room: 1110</span>
+                                                    </div>
+                                                                                            </td>
+                                            <td>3 - 0 - 0 - 0 - 0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="/Student/Section?q=TeS%2BEobW5XroyNdoZz4dBg%3D%3D">01692-PHYSICS 2 [BB]</a>
+                                                
+
+                                                    <div>
+                                                        <span>(Theory) Time: Sun 10:30 - Sun 11:45 Room: 6205</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>(Theory) Time: Tue 10:30 - Tue 11:45 Room: 6205</span>
+                                                    </div>
+                                                                                            </td>
+                                            <td>3 - 0 - 0 - 0 - 0</td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </div> 
+                        <div class="col-md-4">
+                            <div id="divAssesment">
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li>
+                                        Admission
+                                        <span class="badge pull-right">
+                                            0.00
+                                        </span>
+                                    </li>
+                                    <li>
+                                        Tuition
+                                        <span class="badge pull-right">
+                                            99,000.00
+                                        </span>
+                                    </li>
+                                    <li>
+                                        Computer Lab
+                                        <span class="badge pull-right">
+                                            2,500.00
+                                        </span>
+                                    </li>
+                                    <li>
+                                        Science Lab
+                                        <span class="badge pull-right">
+                                            2,000.00
+                                        </span>
+                                    </li>
+                                    <li>
+                                        Language Lab
+                                        <span class="badge pull-right">
+                                            0.00
+                                        </span>
+                                    </li>
+                                    <li>
+                                        Studio
+                                        <span class="badge pull-right">
+                                            0.00
+                                        </span>
+                                    </li>
+                                    <li>
+                                            <span>Development</span>
+                                        <span class="badge pull-right">
+                                            0.00
+                                        </span>
+                                    </li>
+                                    <li>
+                                            <span>Activity</span>
+                                        <span class="badge pull-right">
+                                            0.00
+                                        </span>
+                                    </li>
+                                    <li>
+                                        Verification Fee
+                                        <span class="badge pull-right">
+                                            0.00
+                                        </span>
+                                    </li>
+                                    <li>
+                                        Miscellaneous
+                                        <span class="badge pull-right">
+                                            3,500.00
+                                        </span>
+                                    </li>
+                                                                        <li>
+                                        <strong class="text-info">Total</strong>
+                                        <span class="badge pull-right">
+                                            107,000.00
+                                        </span>
+                                    </li>
+                                    
+                                    <li>
+                                        <label class="text-warning">Deduction</label>
+                                        <span class="badge pull-right">
+                                            0.00
+                                        </span>
+                                    </li>
+                                    <li>
+                                        Prev. Balance
+                                        <span class="badge pull-right">
+                                            -16,500.00
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <strong class="text-info">Net Total</strong>
+                                        <span class="badge pull-right">
+                                            107,000.00
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <strong>Amount Paid</strong>
+                                        <span class="badge pull-right">
+                                            0.00
+                                        </span>
+                                    </li>
+                                    <li>
+                                            <label class="text-success">Balance</label>
+
+                                        <span class="badge pull-right">
+                                            90,500.00
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+    </div>
+
+</div>
+
+        </div>
+        
+    
+    <script type="text/javascript">
+        $('#SemesterDropDown').change(function () {
+            window.location.href = $(this).val();
+        });
+
+        function checkValidity(lastSemesterId, lastSemesterTitle,selectedId) {
+            //alert(selectedId);
+            //alert(lastSemesterId);
+            if (lastSemesterId !== selectedId) {
+                alert("Sorry! You can only take registration print out from " + lastSemesterTitle);
+                return false;
+            }
+            return true;
+        }
+
+        
+    </script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.table-details').footable({
+                "sorting": {
+                    "enabled": true
+                }
+            });
+
+            var lastScrollTop = 0;
+
+            $(window).scroll(function (event) {
+                var st = $(this).scrollTop();
+                if (st > lastScrollTop) {
+                    if (st > 15) {
+                        $(".drawer-menu-link>i").css({ opacity: .33 });
+                    }
+                } else {
+                    if (st < 15) {
+                        $(".drawer-menu-link>i").css({ opacity: 1 });
+                    }
+                }
+                lastScrollTop = st;
+                //console.log(st);
+            });
+
+
+
+        });
+    </script>
+
+    </div>
+</body>
+</html>
